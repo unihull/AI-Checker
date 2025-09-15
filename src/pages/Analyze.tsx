@@ -10,6 +10,7 @@ import { useAuthStore } from '@/stores/authStore'
 import { supabase } from '@/lib/supabase'
 import { NotificationService } from '@/lib/notifications'
 import { FileImage, Video, Music, MessageSquare, Link as LinkIcon, FileText } from 'lucide-react'
+import { fileToBase64, calculateFileHash } from '@/utils/fileUtils'
 
 export function Analyze() {
   const { t } = useTranslation('common')
@@ -502,30 +503,4 @@ export function Analyze() {
       )}
     </div>
   )
-}
-
-// Helper functions
-const fileToBase64 = (file: File): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.onload = () => {
-      const result = reader.result as string
-      const base64 = result.split(',')[1]
-      resolve(base64)
-    }
-    reader.onerror = () => reject(new Error('Failed to read file'))
-    reader.readAsDataURL(file)
-  })
-}
-
-const calculateFileHash = async (file: File): Promise<string> => {
-  try {
-    const arrayBuffer = await file.arrayBuffer()
-    const hashBuffer = await crypto.subtle.digest('SHA-256', arrayBuffer)
-    const hashArray = Array.from(new Uint8Array(hashBuffer))
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-  } catch (error) {
-    console.error('File hash calculation failed:', error)
-    return `fallback_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-  }
 }

@@ -1,4 +1,5 @@
 import { DetectionResult, DetectionOptions } from '../DetectionEngine'
+import { fileToBase64 } from '@/utils/fileUtils'
 
 export class ChatDetection {
   async analyze(data: File | string, options: DetectionOptions = {}): Promise<DetectionResult> {
@@ -289,17 +290,4 @@ export class ChatDetection {
       'Platform Verification': 1.6,
       'Metadata Analysis': 1.1,
       'Conversation Flow Analysis': 1.3
-    }
-
-    let totalScore = 0
-    let totalWeight = 0
-
-    algorithms.forEach(alg => {
-      const weight = weights[alg.name as keyof typeof weights] || 1.0
-      totalScore += alg.score * weight
-      totalWeight += weight
-    })
-
-    return Math.round(totalScore / totalWeight)
-  }
 }

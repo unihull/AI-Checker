@@ -55,7 +55,7 @@ export function Settings() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [showApiKey, setShowApiKey] = useState<string | null>(null)
-  const [decryptedKeys, setDecryptedKeys] = useState<{ [id: string]: string }>({})
+  const [maskedApiKeys, setMaskedApiKeys] = useState<{ [id: string]: string }>({})
 
   const profileForm = useForm({
     defaultValues: {
@@ -263,7 +263,7 @@ export function Settings() {
     setShowApiKey(keyId)
     
     // Show masked key preview only
-    setDecryptedKeys(prev => ({
+    setMaskedApiKeys(prev => ({
       ...prev,
       [provider]: `${provider}_key_••••••••••••${keyId.slice(-4)}`
     }))
@@ -609,7 +609,7 @@ export function Settings() {
                       <p className="font-medium capitalize">{key.provider}</p>
                       <p className="text-sm text-muted-foreground">
                         {showApiKey === key.id ? 
-                          (decryptedKeys[key.provider] || '••••••••••••••••') : 
+                          (maskedApiKeys[key.provider] || '••••••••••••••••') : 
                           '••••••••••••••••'} • 
                         Added {new Date(key.created_at).toLocaleDateString()}
                       </p>

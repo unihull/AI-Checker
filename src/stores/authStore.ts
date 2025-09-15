@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { supabase } from '@/lib/supabase'
 import type { User } from '@supabase/supabase-js'
+import { SecurityService } from '@/lib/security'
 
 interface Profile {
   id: string
@@ -152,16 +153,20 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 // Simplified session creation
 async function createUserSessionAsync(userId: string) {
   try {
+    const clientInfo = await SecurityService.getClientInfo()
+    
     await supabase
       .from('user_sessions')
       .insert({
         user_id: userId,
         session_token: crypto.randomUUID(),
-        ip_address: '127.0.0.1',
-        user_agent: navigator.userAgent,
-        device_type: /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop',
-        browser: getBrowserName(),
-        os: getOSName()
+        ip_address: clientInfo.ip,
+        user_agent: clientInfo.userAgent,
+        country: clientInfo.country,
+        city: clientInfo.city,
+        device_type: clientInfo.deviceType,
+        browser: clientInfo.browser,
+        os: clientInfo.os
       })
   } catch (error) {
     console.warn('Session creation failed:', error)
