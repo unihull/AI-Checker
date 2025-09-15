@@ -96,7 +96,7 @@ export function Home() {
               {t('appName')}
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 font-medium leading-relaxed tracking-wide text-balance">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium leading-relaxed tracking-wide">
               {t('tagline')}
             </p>
             
