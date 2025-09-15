@@ -59,6 +59,10 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Arabic', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
 
   code {
@@ -155,6 +159,10 @@
     50% { opacity: 0.8; }
   }
 
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+  }
   .animate-fade-in {
     animation: fade-in 0.3s ease-out;
   }
@@ -167,6 +175,9 @@
     animation: pulse-soft 2s ease-in-out infinite;
   }
 
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     * {

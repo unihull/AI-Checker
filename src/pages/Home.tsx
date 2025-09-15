@@ -89,26 +89,26 @@ export function Home() {
         <div className="container mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
-              <Shield className="h-16 w-16 text-primary" />
+              <Shield className="h-16 w-16 text-primary animate-float" />
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight tracking-tight">
               {t('appName')}
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium leading-relaxed tracking-wide">
               {t('tagline')}
             </p>
             
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Advanced AI-powered platform for forensic analysis and fact-checking of digital content. 
               Verify images, videos, audio, chat screenshots, URLs, and text claims with professional-grade accuracy.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6"
+                className="text-lg px-10 py-7 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => navigate('/analyze')}
               >
                 {t('verify')} Now
@@ -118,7 +118,7 @@ export function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-8 py-6"
+                className="text-lg px-10 py-7 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => setShowAuthModal(true)}
               >
                 {t('signup')} Free
@@ -167,13 +167,13 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-background hover:to-muted/30">
                 <CardHeader>
-                  <feature.icon className={`h-12 w-12 ${feature.color} mb-4`} />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <feature.icon className={`h-12 w-12 ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`} />
+                  <CardTitle className="text-xl mb-3 leading-tight">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -197,31 +197,31 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-primary">1</span>
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+                <span className="text-3xl font-bold text-primary">1</span>
               </div>
-              <h3 className="text-xl font-semibold">Upload or Input</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold leading-tight">Upload or Input</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Upload files, paste URLs, or enter text claims for analysis
               </p>
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-primary">2</span>
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+                <span className="text-3xl font-bold text-primary">2</span>
               </div>
-              <h3 className="text-xl font-semibold">AI Analysis</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold leading-tight">AI Analysis</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Our advanced algorithms analyze content for authenticity and accuracy
               </p>
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-primary">3</span>
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+                <span className="text-3xl font-bold text-primary">3</span>
               </div>
-              <h3 className="text-xl font-semibold">Get Results</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold leading-tight">Get Results</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Receive detailed reports with confidence scores and evidence citations
               </p>
             </div>
