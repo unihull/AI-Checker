@@ -290,4 +290,6 @@ export class ChatDetection {
       'Platform Verification': 1.6,
       'Metadata Analysis': 1.1,
       'Conversation Flow Analysis': 1.3
+    }
+  }
 }

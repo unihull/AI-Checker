@@ -415,4 +415,6 @@ export class ImageAnalysis {
       'Geometric Analysis': 1.4,
       'DCT Coefficient Analysis': 1.6,
       "Benford's Law Analysis": 1.5
+    }
+  }
 }
