@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,11 +26,6 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -53,11 +48,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 94.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
   }
 }
 
@@ -71,27 +61,6 @@
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-  }
-
-  h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-  }
-
-  h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-  }
-
-  h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 
   html {
@@ -102,42 +71,15 @@
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 
-  button, a, input, select, textarea {
-    transition: all 0.2s ease;
+  .bg-grid-black\/\[0\.02\] {
+    background-image: linear-gradient(to right, rgb(0 0 0 / 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgb(0 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-muted/30;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-pretty {
-    text-wrap: pretty;
+  .bg-grid-white\/\[0\.02\] {
+    background-image: linear-gradient(to right, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }

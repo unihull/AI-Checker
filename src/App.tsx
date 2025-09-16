@@ -33,15 +33,7 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      <Router>
-        <div className="min-h-screen bg-background text-foreground">
-          <Header />
-          <main className="flex-1">
-            <AppRoutes />
-          </main>
-          <Footer />
-          <Toaster />
-        </div>
+        <div className="min-h-screen bg-background">
       </Router>
     </ErrorBoundary>
   )

@@ -86,15 +86,6 @@ export function Home() {
       {/* Hero Section */}
       <section className="py-24 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-8">
-              <Shield className="h-16 w-16 text-primary" />
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-foreground leading-tight tracking-tight">
-              {t('appName')}
-            </h1>
-            
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium leading-relaxed">
               {t('tagline')}
             </p>
@@ -136,17 +127,12 @@ export function Home() {
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
                 <span>GDPR Compliant</span>
-              </div>
-              <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center mb-8">
+              <Shield className="h-16 w-16 text-primary" />
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>SOC 2 Type II</span>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-foreground leading-tight tracking-tight">
+              {t('appName')}
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -246,26 +232,22 @@ export function Home() {
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-primary-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Start Verifying Content Today
-          </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
-            Join thousands of journalists, researchers, and fact-checkers who trust ProofLens 
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             for reliable content verification.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-gray-50 px-8 py-3"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
               onClick={() => navigate('/analyze')}
             >
               <Zap className="mr-2 h-4 w-4" />
               Start Free Analysis
             </Button>
             
-            <Button 
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium leading-relaxed">
               size="lg" 
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
               onClick={() => navigate('/pricing')}
