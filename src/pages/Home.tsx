@@ -83,20 +83,20 @@ export function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-24 px-4 bg-gray-50">
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-24 px-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950 overflow-hidden">
         <div className="container mx-auto">
-            <div className="flex items-center justify-center mb-8">
-              <Shield className="h-16 w-16 text-primary" />
+            <div className="flex items-center justify-center mb-10">
+              <Shield className="h-20 w-20 text-primary animate-scale-pulse" />
             </div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-foreground leading-tight tracking-tight">
-              {t('title')}
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black mb-6 text-center leading-tight tracking-tight gradient-text animate-shimmer">
+              {t('appName')}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium leading-relaxed">
+            <p className="text-2xl md:text-3xl text-center text-muted-foreground mb-8 font-semibold leading-relaxed animate-fade-in">
               {t('tagline')}
             </p>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-center text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Advanced AI-powered platform for forensic analysis and fact-checking of digital content. 
               Verify images, videos, audio, chat screenshots, URLs, and text claims with professional-grade accuracy.
             </p>
@@ -105,13 +105,13 @@ export function Home() {
               <Button 
                 size="lg" 
                 className="px-8 py-3"
-                onClick={() => navigate('/analyze')}
+                onClick={() => navigate('/analyze')} /* className="px-8 py-3 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300" */
               >
                 Verify Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               
-              <Button 
+              <Button
                 size="lg" 
                 variant="outline" 
                 className="px-8 py-3"
@@ -122,28 +122,28 @@ export function Home() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+              <div className="flex items-center space-x-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>IFCN Verified Partner</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+              <div className="flex items-center space-x-2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>ISO 27001 Certified</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+              <div className="flex items-center space-x-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>GDPR Compliant</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+              <div className="flex items-center space-x-2 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+                <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>SOC 2 Type II</span>
               </div>
             </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 bg-background">
+      {/* Stats Section - Enhanced */}
+      <section className="py-20 px-4 bg-gradient-to-br from-background to-muted dark:from-gray-950 dark:to-gray-800">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -159,21 +159,21 @@ export function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Features Section - Enhanced */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground text-glow">
               Comprehensive Content Verification
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our AI-powered platform analyzes every type of digital content to help you distinguish fact from fiction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-200">
+              <Card key={index} className="interactive-scale glass shadow-lg hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
                   <div className="mb-4">
                     <feature.icon className={`h-8 w-8 ${feature.color}`} />
@@ -191,21 +191,21 @@ export function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 px-4 bg-background">
+      {/* How It Works - Enhanced */}
+      <section className="py-20 px-4 bg-gradient-to-br from-background to-muted dark:from-gray-950 dark:to-gray-800">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground text-glow">
               How ProofLens Works
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               Three simple steps to verify any digital content
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto shadow-lg animate-scale-pulse" style={{ animationDelay: '0s' }}>
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
               <h3 className="text-xl font-semibold">Upload or Input</h3>
@@ -215,7 +215,7 @@ export function Home() {
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto shadow-lg animate-scale-pulse" style={{ animationDelay: '0.2s' }}>
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
               <h3 className="text-xl font-semibold">AI Analysis</h3>
@@ -225,7 +225,7 @@ export function Home() {
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto shadow-lg animate-scale-pulse" style={{ animationDelay: '0.4s' }}>
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
               <h3 className="text-xl font-semibold">Get Results</h3>
@@ -238,7 +238,7 @@ export function Home() {
       </section>
 
       {/* Pricing Section */}
-      <PricingSection />
+      <PricingSection /> {/* This component will be updated separately if needed */}
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-primary-foreground">
@@ -254,7 +254,7 @@ export function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-gray-50 px-8 py-3"
+              className="bg-white text-primary hover:bg-gray-100 px-8 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={() => navigate('/analyze')}
             >
               <Zap className="mr-2 h-4 w-4" />
@@ -262,8 +262,8 @@ export function Home() {
             </Button>
             
             <Button 
-              size="lg" 
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
+              size="lg" /* className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300" */
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={() => navigate('/pricing')}
             >
               View Pricing Plans

@@ -38,8 +38,8 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-6 w-6 text-primary" />
-            <span className="text-xl font-semibold text-foreground">{t('appName')}</span>
+            <Shield className="h-7 w-7 text-primary animate-pulse-soft" />
+            <span className="text-2xl font-bold text-foreground gradient-text animate-shimmer">{t('appName')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,10 +49,11 @@ export function Header() {
               return (
                 <Link
                   key={item.path}
-                  to={item.path}
-                  className="text-sm font-medium transition-colors hover:text-primary px-3 py-2"
+                  to={item.path} /* className="text-sm font-medium transition-colors hover:text-primary px-3 py-2" */
+                  className="relative text-sm font-medium px-3 py-2 group transition-all duration-300 ease-out hover:text-primary"
                 >
                   {item.label}
+                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
                 </Link>
               )
             })}
@@ -60,6 +61,7 @@ export function Header() {
               <Link
                 to="/admin"
                 className="text-sm font-medium transition-colors hover:text-primary px-3 py-2"
+                /* className="relative text-sm font-medium px-3 py-2 group transition-all duration-300 ease-out hover:text-primary" */
               >
                 Admin
               </Link>
@@ -70,12 +72,12 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
             <ThemeToggle />
-            
+
             {user ? (
               <div className="hidden md:flex items-center space-x-2">
                 <Button
                   variant="ghost"
-                  onClick={() => navigate('/dashboard')}
+                  onClick={() => navigate('/dashboard')} /* className="px-4 py-2 text-sm" */
                 >
                   {t('dashboard')}
                 </Button>
@@ -89,13 +91,13 @@ export function Header() {
             ) : (
               <div className="hidden md:flex items-center space-x-2">
                 <Button
-                  variant="ghost"
-                  onClick={() => setShowAuthModal(true)}
+                  variant="ghost" /* className="px-4 py-2 text-sm" */
+                  onClick={() => setShowAuthModal(true)} /* className="px-4 py-2 text-sm" */
                 >
                   {t('login')}
                 </Button>
                 <Button
-                  onClick={() => setShowAuthModal(true)}
+                  onClick={() => setShowAuthModal(true)} /* className="px-4 py-2 text-sm" */
                 >
                   {t('verify')}
                 </Button>
