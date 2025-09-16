@@ -205,34 +205,40 @@ export function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-white">1</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold">Upload or Input</h3>
+              <h3 className="text-xl font-semibold mb-3">Upload or Input</h3>
               <p className="text-sm text-muted-foreground">
                 Upload files, paste URLs, or enter text claims for analysis
               </p>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-white">2</span>
+            <div className="text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold">AI Analysis</h3>
+              <h3 className="text-xl font-semibold mb-3">AI Analysis</h3>
               <p className="text-sm text-muted-foreground">
                 Our advanced algorithms analyze content for authenticity and accuracy
               </p>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <span className="text-2xl font-bold text-white">3</span>
+            <div className="text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold">Get Results</h3>
+              <h3 className="text-xl font-semibold mb-3">Get Results</h3>
               <p className="text-sm text-muted-foreground">
-                Receive detailed reports with confidence scores and evidence citations
+                Receive detailed reports with confidence scores and evidence
               </p>
             </div>
           </div>
@@ -246,16 +252,17 @@ export function Home() {
       <section className="py-20 px-4 bg-primary text-primary-foreground">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to start verifying content?
+            Start Verifying Content Today
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
-            Join thousands of professionals who trust ProofLens for reliable content verification.
+            Join thousands of journalists, researchers, and fact-checkers who trust ProofLens 
+            for reliable content verification.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
+              className="bg-white text-primary hover:bg-gray-50 px-8 py-3"
               onClick={() => navigate('/analyze')}
             >
               <Zap className="mr-2 h-4 w-4" />
@@ -264,6 +271,7 @@ export function Home() {
             
             <Button 
               size="lg" 
+              variant="outline"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
               onClick={() => navigate('/pricing')}
             >
