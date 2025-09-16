@@ -33,13 +33,13 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-primary/20 bg-background/80 backdrop-blur-intense shadow-dramatic">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-7 w-7 text-primary animate-pulse-soft" />
-            <span className="text-2xl font-bold text-foreground gradient-text animate-shimmer">{t('appName')}</span>
+            <Shield className="h-8 w-8 text-primary animate-intense-pulse animate-intense-glow" />
+            <span className="text-3xl font-black gradient-text-vibrant animate-dramatic-shimmer text-glow-intense">{t('appName')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,10 +50,10 @@ export function Header() {
                 <Link
                   key={item.path}
                   to={item.path} /* className="text-sm font-medium transition-colors hover:text-primary px-3 py-2" */
-                  className="relative text-sm font-medium px-3 py-2 group transition-all duration-300 ease-out hover:text-primary"
+                  className="relative text-sm font-semibold px-4 py-3 group transition-all duration-500 ease-out hover:text-primary hover:bg-primary/10 rounded-lg"
                 >
                   {item.label}
-                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-[4px] w-0 bg-gradient-to-r from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full rounded-full"></span>
                 </Link>
               )
             })}
@@ -76,13 +76,15 @@ export function Header() {
             {user ? (
               <div className="hidden md:flex items-center space-x-2">
                 <Button
-                  variant="ghost"
+                  variant="ghost" 
+                  className="btn-dramatic"
                   onClick={() => navigate('/dashboard')} /* className="px-4 py-2 text-sm" */
                 >
                   {t('dashboard')}
                 </Button>
                 <Button
                   variant="outline"
+                  className="btn-dramatic"
                   onClick={handleSignOut}
                 >
                   {t('logout')}
@@ -92,11 +94,13 @@ export function Header() {
               <div className="hidden md:flex items-center space-x-2">
                 <Button
                   variant="ghost" /* className="px-4 py-2 text-sm" */
+                  className="btn-dramatic"
                   onClick={() => setShowAuthModal(true)} /* className="px-4 py-2 text-sm" */
                 >
                   {t('login')}
                 </Button>
                 <Button
+                  className="btn-dramatic bg-primary hover:bg-primary/90 text-primary-foreground shadow-intense"
                   onClick={() => setShowAuthModal(true)} /* className="px-4 py-2 text-sm" */
                 >
                   {t('verify')}

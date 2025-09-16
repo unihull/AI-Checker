@@ -1,29 +1,28 @@
-```typescript
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-base font-bold ring-offset-background transition-all duration-500 ease-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-4 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-md hover:bg-primary/90 hover:shadow-lg transform hover:scale-105",
+        default: "bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-intense hover:shadow-dramatic transform hover:scale-110 hover:brightness-110 hover:saturate-125",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/90 hover:shadow-lg transform hover:scale-105",
+          "bg-gradient-to-r from-destructive to-red-600 text-destructive-foreground shadow-intense hover:shadow-dramatic transform hover:scale-110 hover:brightness-110",
         outline:
-          "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md transform hover:scale-105",
+          "border-4 border-primary bg-background hover:bg-primary/20 hover:text-primary shadow-dramatic hover:shadow-intense transform hover:scale-108 hover:border-primary/80",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-md hover:bg-secondary/80 hover:shadow-lg transform hover:scale-105",
-        ghost: "hover:bg-accent hover:text-accent-foreground transition-colors duration-200",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-gradient-to-r from-secondary to-accent text-secondary-foreground shadow-intense hover:shadow-dramatic transform hover:scale-110 hover:brightness-110",
+        ghost: "hover:bg-accent/20 hover:text-accent-foreground transition-all duration-300 hover:scale-105",
+        link: "text-primary underline-offset-4 hover:underline font-semibold",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-12 rounded-md px-8 text-lg", /* Larger for impact */
-        icon: "h-10 w-10",
+        default: "h-12 px-6 py-3",
+        sm: "h-10 rounded-lg px-4 text-sm",
+        lg: "h-16 rounded-xl px-10 text-xl font-black",
+        icon: "h-12 w-12",
       },
     },
     defaultVariants: {
@@ -54,4 +53,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
-```
