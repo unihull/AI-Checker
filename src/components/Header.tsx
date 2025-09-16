@@ -33,16 +33,16 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-primary/5">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-2xl shadow-primary/10">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <Shield className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors duration-300" />
+              <Shield className="h-10 w-10 text-primary drop-shadow-2xl group-hover:scale-125 transition-all duration-500 animate-glow" />
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition-all duration-500 animate-pulse-soft" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">{t('appName')}</span>
+            <span className="text-2xl font-black bg-gradient-to-r from-primary via-chart-1 to-chart-2 bg-clip-text text-transparent drop-shadow-lg">{t('appName')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,20 +53,20 @@ export function Header() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-sm font-medium transition-all duration-300 hover:text-primary relative group py-2"
+                  className="text-base font-semibold transition-all duration-400 hover:text-primary relative group py-3 px-2"
                 >
                   <span className="relative z-10">{item.label}</span>
-                  <div className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary to-chart-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-full shadow-lg shadow-primary/50" />
                 </Link>
               )
             })}
             {user && profile?.role === 'admin' && (
               <Link
                 to="/admin"
-                className="text-sm font-medium transition-all duration-300 hover:text-primary relative group py-2"
+                className="text-base font-semibold transition-all duration-400 hover:text-primary relative group py-3 px-2"
               >
                 <span className="relative z-10">Admin</span>
-                <div className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary to-chart-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-full shadow-lg shadow-primary/50" />
               </Link>
             )}
           </nav>
