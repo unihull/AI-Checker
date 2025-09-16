@@ -86,6 +86,7 @@ export function Home() {
       {/* Hero Section */}
       <section className="py-24 px-4 bg-gray-50">
         <div className="container mx-auto">
+          <div className="text-center">
             <div className="flex items-center justify-center mb-8">
               <Shield className="h-16 w-16 text-primary" />
             </div>
@@ -139,6 +140,7 @@ export function Home() {
                 <span>SOC 2 Type II</span>
               </div>
             </div>
+          </div>
         </div>
       </section>
 
@@ -244,17 +246,16 @@ export function Home() {
       <section className="py-20 px-4 bg-primary text-primary-foreground">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Start Verifying Content Today
+            Ready to start verifying content?
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
-            Join thousands of journalists, researchers, and fact-checkers who trust ProofLens 
-            for reliable content verification.
+            Join thousands of professionals who trust ProofLens for reliable content verification.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-gray-50 px-8 py-3"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
               onClick={() => navigate('/analyze')}
             >
               <Zap className="mr-2 h-4 w-4" />
