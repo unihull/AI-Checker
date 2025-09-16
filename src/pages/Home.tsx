@@ -86,12 +86,11 @@ export function Home() {
       {/* Hero Section */}
       <section className="py-24 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <div className="text-center">
             <div className="flex items-center justify-center mb-8">
               <Shield className="h-16 w-16 text-primary" />
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-foreground leading-tight tracking-tight">
-              {t('appName')}
+              {t('title')}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium leading-relaxed">
               {t('tagline')}
@@ -140,7 +139,6 @@ export function Home() {
                 <span>SOC 2 Type II</span>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -151,7 +149,7 @@ export function Home() {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="mb-3">
-                  <stat.icon className="h-8 w-8 text-primary mx-auto" />
+                  <stat.icon className="h-8 w-8 mx-auto text-primary mb-2" />
                 </div>
                 <div className="text-3xl font-bold mb-2 text-foreground">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -205,40 +203,34 @@ export function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-white">1</span>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Upload or Input</h3>
+              <h3 className="text-xl font-semibold">Upload or Input</h3>
               <p className="text-sm text-muted-foreground">
                 Upload files, paste URLs, or enter text claims for analysis
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-white">2</span>
-                </div>
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">AI Analysis</h3>
+              <h3 className="text-xl font-semibold">AI Analysis</h3>
               <p className="text-sm text-muted-foreground">
                 Our advanced algorithms analyze content for authenticity and accuracy
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-white">3</span>
-                </div>
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Get Results</h3>
+              <h3 className="text-xl font-semibold">Get Results</h3>
               <p className="text-sm text-muted-foreground">
-                Receive detailed reports with confidence scores and evidence
+                Receive detailed reports with confidence scores and evidence citations
               </p>
             </div>
           </div>
@@ -271,7 +263,6 @@ export function Home() {
             
             <Button 
               size="lg" 
-              variant="outline"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3"
               onClick={() => navigate('/pricing')}
             >
