@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-12 items-center justify-center rounded-2xl bg-muted/80 backdrop-blur-sm p-1.5 text-muted-foreground shadow-lg border border-border/50",
+      "inline-flex h-16 items-center justify-center rounded-3xl bg-muted/90 backdrop-blur-xl p-2 text-muted-foreground shadow-2xl border-2 border-border/30 glass",
       className
     )}
     {...props}
@@ -26,7 +26,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-xl px-4 py-2.5 text-base font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-lg data-[state=active]:border-b-4 data-[state=active]:border-primary data-[state=active]:transform data-[state=active]:scale-105 hover:bg-background/50 hover:text-foreground/80",
+      "inline-flex items-center justify-center whitespace-nowrap rounded-2xl px-6 py-3 text-lg font-bold ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/50 focus-visible:ring-offset-4 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-chart-1 data-[state=active]:text-primary-foreground data-[state=active]:shadow-2xl data-[state=active]:border-b-4 data-[state=active]:border-primary data-[state=active]:transform data-[state=active]:scale-110 data-[state=active]:-translate-y-1 hover:bg-background/60 hover:text-foreground/90 hover:shadow-lg hover:scale-105 interactive-scale",
       className
     )}
     {...props}
@@ -41,7 +41,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      "mt-4 ring-offset-background focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/50 focus-visible:ring-offset-4 animate-fade-in",
       className
     )}
     {...props}
