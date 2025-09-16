@@ -33,7 +33,13 @@ export default function App() {
 
   return (
     <ErrorBoundary>
+      <Router>
         <div className="min-h-screen bg-background">
+          <Header />
+          <AppRoutes />
+          <Footer />
+          <Toaster />
+        </div>
       </Router>
     </ErrorBoundary>
   )
