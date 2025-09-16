@@ -34,13 +34,16 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Router>
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background text-foreground relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-black/[0.02]" />
+          <div className="relative z-10">
           <Header />
           <main className="flex-1">
             <AppRoutes />
           </main>
           <Footer />
           <Toaster />
+          </div>
         </div>
       </Router>
     </ErrorBoundary>

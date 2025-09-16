@@ -33,13 +33,16 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-primary/5">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">{t('appName')}</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <Shield className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors duration-300" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">{t('appName')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,18 +53,20 @@ export function Header() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-sm font-medium transition-colors hover:text-primary"
+                  className="text-sm font-medium transition-all duration-300 hover:text-primary relative group py-2"
                 >
-                  {item.label}
+                  <span className="relative z-10">{item.label}</span>
+                  <div className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </Link>
               )
             })}
             {user && profile?.role === 'admin' && (
               <Link
                 to="/admin"
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-sm font-medium transition-all duration-300 hover:text-primary relative group py-2"
               >
-                Admin
+                <span className="relative z-10">Admin</span>
+                <div className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             )}
           </nav>
