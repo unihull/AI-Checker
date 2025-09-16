@@ -40,12 +40,18 @@ export function Header() {
           <Link to="/" className="flex items-center space-x-2">
             <Shield className="h-6 w-6 text-primary" />
             <span className="text-xl font-semibold text-foreground">{t('appName')}</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1">
+            {navigationItems.map((item) => {
               if (item.protected && !user) return null
               return (
                 <Link
                   key={item.path}
                   to={item.path}
                   className="text-sm font-medium transition-colors hover:text-primary px-3 py-2"
+                >
                   {item.label}
                 </Link>
               )
@@ -56,6 +62,7 @@ export function Header() {
                 className="text-sm font-medium transition-colors hover:text-primary px-3 py-2"
               >
                 Admin
+              </Link>
             )}
           </nav>
 
